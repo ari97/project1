@@ -7,6 +7,7 @@
       First name: <input type="text" name="fname"><br>
       Last name: <input type = "text" name = "lname"><br>
       CWID: <input type = "text" name = "cwid"><br>
+      <!-- can we format the above so it is input in xxx-xx-xxxx? -->
       <input type = "radio" name="gender" value = "male"> Male<br>
       <input type = "radio" name="gender" value = "female"> Female<br>
       <input type = "radio" name="gender" value = "other"> Other<br>
