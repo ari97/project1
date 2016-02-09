@@ -13,7 +13,7 @@
       <input type = "radio" name="gender" value = "other"> Other<br>
       
       <input type = "radio" name="class" value = "freshman"> Freshman<br>
-      <input type = "radio" name="class" value = "sophmore"> Sophmore<br>
+      <input type = "radio" name="class" value = "sophomore"> Sophomore<br>
       <input type = "radio" name="class" value = "junior"> Junior<br>
       <input type = "radio" name="class" value = "senior"> Senior<br>
       <select name = "residence">

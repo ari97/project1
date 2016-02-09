@@ -34,22 +34,22 @@
         }
         break;
       case "midrise":
-        if($class=="sophmore"&&(!$specialNeeds)&&(!$kitchen)){
+        if($class=="sophomore"&&(!$specialNeeds)&&(!$kitchen)){
           $verify=true;
         }
         break;
       case "foy":
-        if($class=="sophmore"&&(!$specialNeeds)){
+        if($class=="sophomore"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
       case "gartland":
-        if($class=="sophmore"&&(!$specialNeeds)){
+        if($class=="sophomore"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
       case "new":
-        if($class=="sophmore"&&(!$specialNeeds)){
+        if($class=="sophomore"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
@@ -123,20 +123,20 @@
           $tspecialNeeds = (!$specialNeeds);
           break;
         case "midrise":
-          $tclass = ($class=="sophmore");
+          $tclass = ($class=="sophomore");
           $tspecialNeeds = (!$specialNeeds);
           $tkitchen = (!$kitchen);
           break;
         case "foy":
-          $tclass = ($class=="sophmore");
+          $tclass = ($class=="sophomore");
           $tspecialNeeds = (!$specialNeeds);
           break;
         case "gartland":
-          $tclass = ($class=="sophmore");
+          $tclass = ($class=="sophomore");
           $tspecialNeeds = (!$specialNeeds);
           break;
         case "new":
-          $tclass = ($class=="sophmore");
+          $tclass = ($class=="sophomore");
           $tspecialNeeds = (!$specialNeeds);
           break;
         case "lower_west":
@@ -161,7 +161,7 @@
           break;
       }
       echo "<br>";
-      echo ($tclass?"": $class . " is invalid for " . $hallSelection . "<br>");
+      echo ($tclass?"": "Your class " . $class . " is invalid for " . $hallSelection . "<br>");
       echo ($tspecialNeeds?"": "Special-needs is invalid for " . $hallSelection . "<br>");
       echo ($tkitchen?"": "Kitchen is invalid for " . $hallSelection . "<br>");
       
@@ -179,8 +179,8 @@
           echo($kitchen ? "Foy Townhouses, Gartland Commons, and New Townhouses":"Midrise Hall, Foy Townhouses, Gartland Commons, and New Townhouses");
           break;
         case "junior":
-          break;
         case "senior":
+          echo("Talmadge Court, Lower West, Upper West, Fulton Street, and New Fulton Townhouses.");
           break;
       }
     }
