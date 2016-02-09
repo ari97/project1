@@ -3,23 +3,23 @@
     <title>Room Selection Results</title>
   </head>
   <?php
-  $hallSelection = isset($_POST["residence"]);
+  $hallSelection = $_POST["residence"];
   $gender = $_POST["gender"];
   $class = $_POST["class"];
-  $specialNeeds = isset($_POST["special-needs"]);
-  $laundry = isset($_POST["laundry"]);
-  $kitchen = isset($_POST["kitchen"]);
+  $specialNeeds = $_POST["special-needs"];
+  $laundry = $_POST["laundry"];
+  $kitchen = $_POST["kitchen"];
   
   if($hallSelection){
     $verify=false;
     switch($hallSelection){
       case "leo":
-        if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
+        if($class=="freshman"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
       case "champagnat":
-        if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
+        if($class=="freshman"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
@@ -29,7 +29,7 @@
         }
         break;
       case "sheahan":
-        if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
+        if($class=="freshman"&&(!$specialNeeds)){
           $verify=true;
         }
         break;
@@ -100,78 +100,90 @@
       echo "<br>", $kitchen;
     } else{
       echo "Please redo your selection";
+      $tclass = true;
+      $tspecialNeeds = true;
+      $tkitchen = true;
+      
       switch($hallSelection){
         case "leo":
-          if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
-            $verify=true;
-          }
+          $tclass = ($class=="freshman");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "champagnat":
-          if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
-            $verify=true;
-          }
+          $tclass = ($class=="freshman");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "marian":
-          if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
-            $verify=true;
-          }
+          $tclass = ($class=="freshman");
+          $tspecialNeeds = (!$specialNeeds);
+          $tkitchen = (!$kitchen);
           break;
         case "sheahan":
-          if($class=="freshman"&&(!$specialNeeds)&&(!$kitchen)){
-            $verify=true;
-          }
+          $tclass = ($class=="freshman");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "midrise":
-          if($class=="sophmore"&&(!$specialNeeds)&&(!$kitchen)){
-            $verify=true;
-          }
+          $tclass = ($class=="sophmore");
+          $tspecialNeeds = (!$specialNeeds);
+          $tkitchen = (!$kitchen);
           break;
         case "foy":
-          if($class=="sophmore"&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="sophmore");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "gartland":
-          if($class=="sophmore"&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="sophmore");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "new":
-          if($class=="sophmore"&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="sophmore");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "lower_west":
-          if(($class=="juniors"||$class=="seniors")&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="juniors"||$class=="seniors");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "upper_west":
-          if(($class=="juniors"||$class=="seniors")&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="juniors"||$class=="seniors");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "fulton":
-          if(($class=="juniors"||$class=="seniors")&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="juniors"||$class=="seniors");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "talmadge":
-          if(($class=="juniors"||$class=="seniors")&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="juniors"||$class=="seniors");
+          $tspecialNeeds = (!$specialNeeds);
           break;
         case "new_fulton":
-          if(($class=="juniors"||$class=="seniors")&&(!$specialNeeds)){
-            $verify=true;
-          }
+          $tclass = ($class=="juniors"||$class=="seniors");
+          $tspecialNeeds = (!$specialNeeds);
           break;
       }
+      echo "<br>";
+      echo ($tclass?"": $class . " is invalid for " . $hallSelection . "<br>");
+      echo ($tspecialNeeds?"": "Special-needs is invalid for " . $hallSelection . "<br>");
+      echo ($tkitchen?"": "Kitchen is invalid for " . $hallSelection . "<br>");
+      
       echo "<a href=\"index.php\">Select preference again</a>";
+      
     }
   } else{
-    echo "false";
+    if ($class){
+      echo "Your choices of residence could be ";
+      switch($class){
+        case "freshman":
+          echo ($kitchen ? "Leo, Champagnat, and Sheahan halls":"Leo, Champagnat, Marian and Sheahan halls");
+          break;
+        case "sophomore":
+          echo($kitchen ? "Foy Townhouses, Gartland Commons, and New Townhouses":"Midrise Hall, Foy Townhouses, Gartland Commons, and New Townhouses");
+          break;
+        case "junior":
+          break;
+        case "senior":
+          break;
+      }
+    }
   }
-  
   ?>
 </html>

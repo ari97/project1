@@ -1,1 +1,0 @@
-fix the true verafiy so it looks better so no swapping in and out of php
