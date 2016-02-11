@@ -80,24 +80,20 @@
         break;
     }
     if($verify){
-      echo "You did it!";
-      ?>
-      <form action="room_confirmation.php" method="POST">
-        <input type = "hidden" name="hallSelection" value="<?php echo $hallSelection;?>">
-        <input type = "hidden" name="gender" value="<?php echo $gender; ?>">
-        <input type = "hidden" name="class" value="<?php echo $class; ?>">
-        <input type = "hidden" name="special-needs" value="<?php echo $specialNeeds; ?>">
-        <input type = "hidden" name="laundry" value="<? echo $laundry ?>">
-        <input type = "hidden" name="kitchen" value="<?php echo $kitchen; ?>">
-        <input type = "hidden" name="cwid" value="<?php echo $_POST["cwid"]; ?>">
-        <input type = "hidden" name="lname" value="<?php echo $_POST["lname"]; ?>">
-        <input type = "hidden" name="fname" value="<?php echo $_POST["fname"]; ?>">
-        <input type ="submit" value = "Submit">
-      </form>
-      <?php
-      echo "<br>", $specialNeeds;
-      echo "<br>", $laundry;
-      echo "<br>", $kitchen;
+      echo "You did it!\n";
+      echo "<form action=\"room_confirmation.php\" method=\"POST\">\n";
+      echo "  <input type = \"hidden\" name=\"hallSelection\" value=\"" . $hallSelection . "\">\n";
+      echo "  <input type = \"hidden\" name=\"gender\" value=\"" . $gender . "\">\n";
+      echo "  <input type = \"hidden\" name=\"class\" value=\"" . $class . "\">\n";
+      echo "  <input type = \"hidden\" name=\"special-needs\" value=\"" . $specialNeeds . "\">\n";
+      echo "  <input type = \"hidden\" name=\"laundry\" value=\"" . $laundry . "\">\n";
+      echo "  <input type = \"hidden\" name=\"kitchen\" value=\"" . $kitchen . "\">\n";
+      echo "  <input type = \"hidden\" name=\"cwid\" value=\"" . $_POST["cwid"] . "\">\n";
+      echo "  <input type = \"hidden\" name=\"lname\" value=\"" . $_POST["lname"] . "\">\n";
+      echo "  <input type = \"hidden\" name=\"fname\" value=\"" . $_POST["fname"] . "\">\n";
+      echo "  <input type =\"submit\" value = \"Submit\">\n";
+      echo "</form>\n";
+
     } else{
       echo "Please redo your selection";
       $tclass = true;
@@ -169,6 +165,8 @@
       
     }
   } else{
+    // each one of the choices should be a link that lets then chose that particular dorm.
+    //basically make a slammer form jsut for their differnt options of residenve halls
     if ($class){
       echo "Your choices of residence could be ";
       switch($class){

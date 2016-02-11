@@ -15,14 +15,14 @@
   $laundry = $_POST["laundry"];
   $kitchen = $_POST["kitchen"];
   
-  echo "First name: ", $fname. "<br>";
-  echo "Last name: ", $lname, "<br>";
-  echo "CWID: ", $cwid, "<br>";
-  echo "Hall Selection: ", $hallSelection, "<br>";
-  echo "Gender: ", $gender, "<br>";
-  echo "Class: ", $class, "<br>";
-  echo "Special-needs: ", ($specialNeeds?"True": "False"), "<br>";// this wont work it will output "1" or "" need to change to print out true and false
-  echo "Laundry: ", ($laundry?"True": "False"), "<br>";// this wont work it will output "1" or "" need to change to print out true and false
-  echo "Kitchen: ", ($kitchen?"True": "False"), "<br>";// this wont work it will output "1" or "" need to change to print out true and false
-?>
+  echo "First name: ", $fname. "\n<br>\n";
+  echo "Last name: ", $lname, "\n<br>\n";
+  echo "CWID: ", $cwid, "\n<br>\n";
+  echo "Hall Selection: ", $hallSelection, "\n<br>\n";
+  echo "Gender: ", $gender, "\n<br>\n";
+  echo "Class: ", $class, "\n<br>\n";
+  echo "Special-needs: ", ($specialNeeds?"True": "False"), "\n<br>\n";
+  echo "Laundry: ", ($laundry?"True": "False"), "\n<br>\n";
+  echo "Kitchen: ", ($kitchen?"True": "False"), "\n<br>\n";
+  ?>
 </html>
