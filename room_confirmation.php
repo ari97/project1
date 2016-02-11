@@ -8,7 +8,7 @@
   $fname = $_POST["fname"];
   $lname = $_POST["lname"];
   $cwid = $_POST["cwid"];
-  $hallSelection = isset($_POST["residence"]);
+  $hallSelection = $_POST["hallSelection"];
   $gender = $_POST["gender"];
   $class = $_POST["class"];
   $specialNeeds = $_POST["special-needs"]; 
