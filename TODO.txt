@@ -1,0 +1,6 @@
+1. Swap the entire html to all in php AC [X]
+2. Special Needs. Handicap Accessable. AC []
+3. Change it so when they dont pick a room their options are links that they can select EM [X]
+4. Write code in the case that they don't pick a class. EM [X]
+    a) this could be similar to how we do 3 so they can just select a class and then have the page refresh. [X]
+5. All possible selections for $roomSelection needs to be case consistent.AC [X]
